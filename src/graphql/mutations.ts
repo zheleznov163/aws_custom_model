@@ -2,124 +2,166 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createBlog = /* GraphQL */ `
-  mutation CreateBlog(
-    $input: CreateBlogInput!
-    $condition: ModelBlogConditionInput
+export const createConnect = /* GraphQL */ `
+  mutation CreateConnect(
+    $input: CreateConnectInput!
+    $condition: ModelConnectConditionInput
   ) {
-    createBlog(input: $input, condition: $condition) {
+    createConnect(input: $input, condition: $condition) {
       id
       name
+      family_name
+      email
+      sex
+      birthday
       createdAt
       updatedAt
     }
   }
 `;
-export const updateBlog = /* GraphQL */ `
-  mutation UpdateBlog(
-    $input: UpdateBlogInput!
-    $condition: ModelBlogConditionInput
+export const updateConnect = /* GraphQL */ `
+  mutation UpdateConnect(
+    $input: UpdateConnectInput!
+    $condition: ModelConnectConditionInput
   ) {
-    updateBlog(input: $input, condition: $condition) {
+    updateConnect(input: $input, condition: $condition) {
       id
       name
+      family_name
+      email
+      sex
+      birthday
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteBlog = /* GraphQL */ `
-  mutation DeleteBlog(
-    $input: DeleteBlogInput!
-    $condition: ModelBlogConditionInput
+export const deleteConnect = /* GraphQL */ `
+  mutation DeleteConnect(
+    $input: DeleteConnectInput!
+    $condition: ModelConnectConditionInput
   ) {
-    deleteBlog(input: $input, condition: $condition) {
+    deleteConnect(input: $input, condition: $condition) {
       id
       name
+      family_name
+      email
+      sex
+      birthday
       createdAt
       updatedAt
     }
   }
 `;
-export const createPost = /* GraphQL */ `
-  mutation CreatePost(
-    $input: CreatePostInput!
-    $condition: ModelPostConditionInput
+export const createAdmin = /* GraphQL */ `
+  mutation CreateAdmin(
+    $input: CreateAdminInput!
+    $condition: ModelAdminConditionInput
   ) {
-    createPost(input: $input, condition: $condition) {
+    createAdmin(input: $input, condition: $condition) {
       id
-      title
-      blogID
+      polices
       createdAt
       updatedAt
     }
   }
 `;
-export const updatePost = /* GraphQL */ `
-  mutation UpdatePost(
-    $input: UpdatePostInput!
-    $condition: ModelPostConditionInput
+export const updateAdmin = /* GraphQL */ `
+  mutation UpdateAdmin(
+    $input: UpdateAdminInput!
+    $condition: ModelAdminConditionInput
   ) {
-    updatePost(input: $input, condition: $condition) {
+    updateAdmin(input: $input, condition: $condition) {
       id
-      title
-      blogID
+      polices
       createdAt
       updatedAt
     }
   }
 `;
-export const deletePost = /* GraphQL */ `
-  mutation DeletePost(
-    $input: DeletePostInput!
-    $condition: ModelPostConditionInput
+export const deleteAdmin = /* GraphQL */ `
+  mutation DeleteAdmin(
+    $input: DeleteAdminInput!
+    $condition: ModelAdminConditionInput
   ) {
-    deletePost(input: $input, condition: $condition) {
+    deleteAdmin(input: $input, condition: $condition) {
       id
-      title
-      blogID
+      polices
       createdAt
       updatedAt
     }
   }
 `;
-export const createComment = /* GraphQL */ `
-  mutation CreateComment(
-    $input: CreateCommentInput!
-    $condition: ModelCommentConditionInput
+export const createFsbAgent = /* GraphQL */ `
+  mutation CreateFsbAgent(
+    $input: CreateFsbAgentInput!
+    $condition: ModelFsbAgentConditionInput
   ) {
-    createComment(input: $input, condition: $condition) {
+    createFsbAgent(input: $input, condition: $condition) {
       id
-      postID
-      content
       createdAt
       updatedAt
     }
   }
 `;
-export const updateComment = /* GraphQL */ `
-  mutation UpdateComment(
-    $input: UpdateCommentInput!
-    $condition: ModelCommentConditionInput
+export const updateFsbAgent = /* GraphQL */ `
+  mutation UpdateFsbAgent(
+    $input: UpdateFsbAgentInput!
+    $condition: ModelFsbAgentConditionInput
   ) {
-    updateComment(input: $input, condition: $condition) {
+    updateFsbAgent(input: $input, condition: $condition) {
       id
-      postID
-      content
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteComment = /* GraphQL */ `
-  mutation DeleteComment(
-    $input: DeleteCommentInput!
-    $condition: ModelCommentConditionInput
+export const deleteFsbAgent = /* GraphQL */ `
+  mutation DeleteFsbAgent(
+    $input: DeleteFsbAgentInput!
+    $condition: ModelFsbAgentConditionInput
   ) {
-    deleteComment(input: $input, condition: $condition) {
+    deleteFsbAgent(input: $input, condition: $condition) {
       id
-      postID
-      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    createUser(input: $input, condition: $condition) {
+      id
+      connectID
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    updateUser(input: $input, condition: $condition) {
+      id
+      connectID
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    deleteUser(input: $input, condition: $condition) {
+      id
+      connectID
       createdAt
       updatedAt
     }

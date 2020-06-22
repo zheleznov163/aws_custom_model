@@ -2,16 +2,30 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateBlogInput = {
+export type CreateConnectInput = {
   id?: string | null,
   name: string,
+  family_name: string,
+  email: string,
+  sex: Sex,
+  birthday: string,
 };
 
-export type ModelBlogConditionInput = {
+export enum Sex {
+  male = "male",
+  famale = "famale",
+}
+
+
+export type ModelConnectConditionInput = {
   name?: ModelStringInput | null,
-  and?: Array< ModelBlogConditionInput | null > | null,
-  or?: Array< ModelBlogConditionInput | null > | null,
-  not?: ModelBlogConditionInput | null,
+  family_name?: ModelStringInput | null,
+  email?: ModelStringInput | null,
+  sex?: ModelSexInput | null,
+  birthday?: ModelStringInput | null,
+  and?: Array< ModelConnectConditionInput | null > | null,
+  or?: Array< ModelConnectConditionInput | null > | null,
+  not?: ModelConnectConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -54,27 +68,73 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type UpdateBlogInput = {
+export type ModelSexInput = {
+  eq?: Sex | null,
+  ne?: Sex | null,
+};
+
+export type UpdateConnectInput = {
   id: string,
   name?: string | null,
+  family_name?: string | null,
+  email?: string | null,
+  sex?: Sex | null,
+  birthday?: string | null,
 };
 
-export type DeleteBlogInput = {
+export type DeleteConnectInput = {
   id?: string | null,
 };
 
-export type CreatePostInput = {
+export type CreateAdminInput = {
   id?: string | null,
-  title: string,
-  blogID: string,
+  polices?: Array< string | null > | null,
 };
 
-export type ModelPostConditionInput = {
-  title?: ModelStringInput | null,
-  blogID?: ModelIDInput | null,
-  and?: Array< ModelPostConditionInput | null > | null,
-  or?: Array< ModelPostConditionInput | null > | null,
-  not?: ModelPostConditionInput | null,
+export type ModelAdminConditionInput = {
+  polices?: ModelStringInput | null,
+  and?: Array< ModelAdminConditionInput | null > | null,
+  or?: Array< ModelAdminConditionInput | null > | null,
+  not?: ModelAdminConditionInput | null,
+};
+
+export type UpdateAdminInput = {
+  id: string,
+  polices?: Array< string | null > | null,
+};
+
+export type DeleteAdminInput = {
+  id?: string | null,
+};
+
+export type CreateFsbAgentInput = {
+  id?: string | null,
+};
+
+export type ModelFsbAgentConditionInput = {
+  and?: Array< ModelFsbAgentConditionInput | null > | null,
+  or?: Array< ModelFsbAgentConditionInput | null > | null,
+  not?: ModelFsbAgentConditionInput | null,
+};
+
+export type UpdateFsbAgentInput = {
+  id: string,
+};
+
+export type DeleteFsbAgentInput = {
+  id?: string | null,
+};
+
+export type CreateUserInput = {
+  id?: string | null,
+  connectID: string,
+};
+
+export type ModelUserConditionInput = {
+  connectID?: ModelIDInput | null,
+  and?: Array< ModelUserConditionInput | null > | null,
+  or?: Array< ModelUserConditionInput | null > | null,
+  not?: ModelUserConditionInput | null,
 };
 
 export type ModelIDInput = {
@@ -93,381 +153,474 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type UpdatePostInput = {
+export type UpdateUserInput = {
   id: string,
-  title?: string | null,
-  blogID?: string | null,
+  connectID?: string | null,
 };
 
-export type DeletePostInput = {
+export type DeleteUserInput = {
   id?: string | null,
 };
 
-export type CreateCommentInput = {
-  id?: string | null,
-  postID: string,
-  content: string,
-};
-
-export type ModelCommentConditionInput = {
-  postID?: ModelIDInput | null,
-  content?: ModelStringInput | null,
-  and?: Array< ModelCommentConditionInput | null > | null,
-  or?: Array< ModelCommentConditionInput | null > | null,
-  not?: ModelCommentConditionInput | null,
-};
-
-export type UpdateCommentInput = {
-  id: string,
-  postID?: string | null,
-  content?: string | null,
-};
-
-export type DeleteCommentInput = {
-  id?: string | null,
-};
-
-export type ModelBlogFilterInput = {
+export type ModelConnectFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
-  and?: Array< ModelBlogFilterInput | null > | null,
-  or?: Array< ModelBlogFilterInput | null > | null,
-  not?: ModelBlogFilterInput | null,
+  family_name?: ModelStringInput | null,
+  email?: ModelStringInput | null,
+  sex?: ModelSexInput | null,
+  birthday?: ModelStringInput | null,
+  and?: Array< ModelConnectFilterInput | null > | null,
+  or?: Array< ModelConnectFilterInput | null > | null,
+  not?: ModelConnectFilterInput | null,
 };
 
-export type ModelPostFilterInput = {
+export type ModelAdminFilterInput = {
   id?: ModelIDInput | null,
-  title?: ModelStringInput | null,
-  blogID?: ModelIDInput | null,
-  and?: Array< ModelPostFilterInput | null > | null,
-  or?: Array< ModelPostFilterInput | null > | null,
-  not?: ModelPostFilterInput | null,
+  polices?: ModelStringInput | null,
+  and?: Array< ModelAdminFilterInput | null > | null,
+  or?: Array< ModelAdminFilterInput | null > | null,
+  not?: ModelAdminFilterInput | null,
 };
 
-export type ModelCommentFilterInput = {
+export type ModelFsbAgentFilterInput = {
   id?: ModelIDInput | null,
-  postID?: ModelIDInput | null,
-  content?: ModelStringInput | null,
-  and?: Array< ModelCommentFilterInput | null > | null,
-  or?: Array< ModelCommentFilterInput | null > | null,
-  not?: ModelCommentFilterInput | null,
+  and?: Array< ModelFsbAgentFilterInput | null > | null,
+  or?: Array< ModelFsbAgentFilterInput | null > | null,
+  not?: ModelFsbAgentFilterInput | null,
 };
 
-export type CreateBlogMutationVariables = {
-  input: CreateBlogInput,
-  condition?: ModelBlogConditionInput | null,
+export type ModelUserFilterInput = {
+  id?: ModelIDInput | null,
+  connectID?: ModelIDInput | null,
+  and?: Array< ModelUserFilterInput | null > | null,
+  or?: Array< ModelUserFilterInput | null > | null,
+  not?: ModelUserFilterInput | null,
 };
 
-export type CreateBlogMutation = {
-  createBlog:  {
-    __typename: "Blog",
+export type CreateConnectMutationVariables = {
+  input: CreateConnectInput,
+  condition?: ModelConnectConditionInput | null,
+};
+
+export type CreateConnectMutation = {
+  createConnect:  {
+    __typename: "Connect",
     id: string,
     name: string,
+    family_name: string,
+    email: string,
+    sex: Sex,
+    birthday: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type UpdateBlogMutationVariables = {
-  input: UpdateBlogInput,
-  condition?: ModelBlogConditionInput | null,
+export type UpdateConnectMutationVariables = {
+  input: UpdateConnectInput,
+  condition?: ModelConnectConditionInput | null,
 };
 
-export type UpdateBlogMutation = {
-  updateBlog:  {
-    __typename: "Blog",
+export type UpdateConnectMutation = {
+  updateConnect:  {
+    __typename: "Connect",
     id: string,
     name: string,
+    family_name: string,
+    email: string,
+    sex: Sex,
+    birthday: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type DeleteBlogMutationVariables = {
-  input: DeleteBlogInput,
-  condition?: ModelBlogConditionInput | null,
+export type DeleteConnectMutationVariables = {
+  input: DeleteConnectInput,
+  condition?: ModelConnectConditionInput | null,
 };
 
-export type DeleteBlogMutation = {
-  deleteBlog:  {
-    __typename: "Blog",
+export type DeleteConnectMutation = {
+  deleteConnect:  {
+    __typename: "Connect",
     id: string,
     name: string,
+    family_name: string,
+    email: string,
+    sex: Sex,
+    birthday: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type CreatePostMutationVariables = {
-  input: CreatePostInput,
-  condition?: ModelPostConditionInput | null,
+export type CreateAdminMutationVariables = {
+  input: CreateAdminInput,
+  condition?: ModelAdminConditionInput | null,
 };
 
-export type CreatePostMutation = {
-  createPost:  {
-    __typename: "Post",
+export type CreateAdminMutation = {
+  createAdmin:  {
+    __typename: "Admin",
     id: string,
-    title: string,
-    blogID: string,
+    polices: Array< string | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type UpdatePostMutationVariables = {
-  input: UpdatePostInput,
-  condition?: ModelPostConditionInput | null,
+export type UpdateAdminMutationVariables = {
+  input: UpdateAdminInput,
+  condition?: ModelAdminConditionInput | null,
 };
 
-export type UpdatePostMutation = {
-  updatePost:  {
-    __typename: "Post",
+export type UpdateAdminMutation = {
+  updateAdmin:  {
+    __typename: "Admin",
     id: string,
-    title: string,
-    blogID: string,
+    polices: Array< string | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type DeletePostMutationVariables = {
-  input: DeletePostInput,
-  condition?: ModelPostConditionInput | null,
+export type DeleteAdminMutationVariables = {
+  input: DeleteAdminInput,
+  condition?: ModelAdminConditionInput | null,
 };
 
-export type DeletePostMutation = {
-  deletePost:  {
-    __typename: "Post",
+export type DeleteAdminMutation = {
+  deleteAdmin:  {
+    __typename: "Admin",
     id: string,
-    title: string,
-    blogID: string,
+    polices: Array< string | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type CreateCommentMutationVariables = {
-  input: CreateCommentInput,
-  condition?: ModelCommentConditionInput | null,
+export type CreateFsbAgentMutationVariables = {
+  input: CreateFsbAgentInput,
+  condition?: ModelFsbAgentConditionInput | null,
 };
 
-export type CreateCommentMutation = {
-  createComment:  {
-    __typename: "Comment",
+export type CreateFsbAgentMutation = {
+  createFsbAgent:  {
+    __typename: "FsbAgent",
     id: string,
-    postID: string,
-    content: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type UpdateCommentMutationVariables = {
-  input: UpdateCommentInput,
-  condition?: ModelCommentConditionInput | null,
+export type UpdateFsbAgentMutationVariables = {
+  input: UpdateFsbAgentInput,
+  condition?: ModelFsbAgentConditionInput | null,
 };
 
-export type UpdateCommentMutation = {
-  updateComment:  {
-    __typename: "Comment",
+export type UpdateFsbAgentMutation = {
+  updateFsbAgent:  {
+    __typename: "FsbAgent",
     id: string,
-    postID: string,
-    content: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type DeleteCommentMutationVariables = {
-  input: DeleteCommentInput,
-  condition?: ModelCommentConditionInput | null,
+export type DeleteFsbAgentMutationVariables = {
+  input: DeleteFsbAgentInput,
+  condition?: ModelFsbAgentConditionInput | null,
 };
 
-export type DeleteCommentMutation = {
-  deleteComment:  {
-    __typename: "Comment",
+export type DeleteFsbAgentMutation = {
+  deleteFsbAgent:  {
+    __typename: "FsbAgent",
     id: string,
-    postID: string,
-    content: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type GetBlogQueryVariables = {
+export type CreateUserMutationVariables = {
+  input: CreateUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type CreateUserMutation = {
+  createUser:  {
+    __typename: "User",
+    id: string,
+    connectID: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateUserMutationVariables = {
+  input: UpdateUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type UpdateUserMutation = {
+  updateUser:  {
+    __typename: "User",
+    id: string,
+    connectID: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteUserMutationVariables = {
+  input: DeleteUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type DeleteUserMutation = {
+  deleteUser:  {
+    __typename: "User",
+    id: string,
+    connectID: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type GetConnectQueryVariables = {
   id: string,
 };
 
-export type GetBlogQuery = {
-  getBlog:  {
-    __typename: "Blog",
+export type GetConnectQuery = {
+  getConnect:  {
+    __typename: "Connect",
     id: string,
     name: string,
+    family_name: string,
+    email: string,
+    sex: Sex,
+    birthday: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type ListBlogsQueryVariables = {
-  filter?: ModelBlogFilterInput | null,
+export type ListConnectsQueryVariables = {
+  filter?: ModelConnectFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListBlogsQuery = {
-  listBlogs:  {
-    __typename: "ModelBlogConnection",
+export type ListConnectsQuery = {
+  listConnects:  {
+    __typename: "ModelConnectConnection",
     nextToken: string | null,
   } | null,
 };
 
-export type GetPostQueryVariables = {
+export type GetAdminQueryVariables = {
   id: string,
 };
 
-export type GetPostQuery = {
-  getPost:  {
-    __typename: "Post",
+export type GetAdminQuery = {
+  getAdmin:  {
+    __typename: "Admin",
     id: string,
-    title: string,
-    blogID: string,
+    polices: Array< string | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type ListPostsQueryVariables = {
-  filter?: ModelPostFilterInput | null,
+export type ListAdminsQueryVariables = {
+  filter?: ModelAdminFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListPostsQuery = {
-  listPosts:  {
-    __typename: "ModelPostConnection",
+export type ListAdminsQuery = {
+  listAdmins:  {
+    __typename: "ModelAdminConnection",
     nextToken: string | null,
   } | null,
 };
 
-export type GetCommentQueryVariables = {
+export type GetFsbAgentQueryVariables = {
   id: string,
 };
 
-export type GetCommentQuery = {
-  getComment:  {
-    __typename: "Comment",
+export type GetFsbAgentQuery = {
+  getFsbAgent:  {
+    __typename: "FsbAgent",
     id: string,
-    postID: string,
-    content: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type ListCommentsQueryVariables = {
-  filter?: ModelCommentFilterInput | null,
+export type ListFsbAgentsQueryVariables = {
+  filter?: ModelFsbAgentFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListCommentsQuery = {
-  listComments:  {
-    __typename: "ModelCommentConnection",
+export type ListFsbAgentsQuery = {
+  listFsbAgents:  {
+    __typename: "ModelFsbAgentConnection",
     nextToken: string | null,
   } | null,
 };
 
-export type OnCreateBlogSubscription = {
-  onCreateBlog:  {
-    __typename: "Blog",
+export type GetUserQueryVariables = {
+  id: string,
+};
+
+export type GetUserQuery = {
+  getUser:  {
+    __typename: "User",
+    id: string,
+    connectID: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListUsersQueryVariables = {
+  filter?: ModelUserFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListUsersQuery = {
+  listUsers:  {
+    __typename: "ModelUserConnection",
+    nextToken: string | null,
+  } | null,
+};
+
+export type OnCreateConnectSubscription = {
+  onCreateConnect:  {
+    __typename: "Connect",
     id: string,
     name: string,
+    family_name: string,
+    email: string,
+    sex: Sex,
+    birthday: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnUpdateBlogSubscription = {
-  onUpdateBlog:  {
-    __typename: "Blog",
+export type OnUpdateConnectSubscription = {
+  onUpdateConnect:  {
+    __typename: "Connect",
     id: string,
     name: string,
+    family_name: string,
+    email: string,
+    sex: Sex,
+    birthday: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnDeleteBlogSubscription = {
-  onDeleteBlog:  {
-    __typename: "Blog",
+export type OnDeleteConnectSubscription = {
+  onDeleteConnect:  {
+    __typename: "Connect",
     id: string,
     name: string,
+    family_name: string,
+    email: string,
+    sex: Sex,
+    birthday: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnCreatePostSubscription = {
-  onCreatePost:  {
-    __typename: "Post",
+export type OnCreateAdminSubscription = {
+  onCreateAdmin:  {
+    __typename: "Admin",
     id: string,
-    title: string,
-    blogID: string,
+    polices: Array< string | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnUpdatePostSubscription = {
-  onUpdatePost:  {
-    __typename: "Post",
+export type OnUpdateAdminSubscription = {
+  onUpdateAdmin:  {
+    __typename: "Admin",
     id: string,
-    title: string,
-    blogID: string,
+    polices: Array< string | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnDeletePostSubscription = {
-  onDeletePost:  {
-    __typename: "Post",
+export type OnDeleteAdminSubscription = {
+  onDeleteAdmin:  {
+    __typename: "Admin",
     id: string,
-    title: string,
-    blogID: string,
+    polices: Array< string | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnCreateCommentSubscription = {
-  onCreateComment:  {
-    __typename: "Comment",
+export type OnCreateFsbAgentSubscription = {
+  onCreateFsbAgent:  {
+    __typename: "FsbAgent",
     id: string,
-    postID: string,
-    content: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnUpdateCommentSubscription = {
-  onUpdateComment:  {
-    __typename: "Comment",
+export type OnUpdateFsbAgentSubscription = {
+  onUpdateFsbAgent:  {
+    __typename: "FsbAgent",
     id: string,
-    postID: string,
-    content: string,
     createdAt: string,
     updatedAt: string,
   } | null,
 };
 
-export type OnDeleteCommentSubscription = {
-  onDeleteComment:  {
-    __typename: "Comment",
+export type OnDeleteFsbAgentSubscription = {
+  onDeleteFsbAgent:  {
+    __typename: "FsbAgent",
     id: string,
-    postID: string,
-    content: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateUserSubscription = {
+  onCreateUser:  {
+    __typename: "User",
+    id: string,
+    connectID: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateUserSubscription = {
+  onUpdateUser:  {
+    __typename: "User",
+    id: string,
+    connectID: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteUserSubscription = {
+  onDeleteUser:  {
+    __typename: "User",
+    id: string,
+    connectID: string,
     createdAt: string,
     updatedAt: string,
   } | null,

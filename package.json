@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "amplify app skeleton",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@aws-amplify/datastore": "^2.2.4"
+  },
   "devDependencies": {
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.0",

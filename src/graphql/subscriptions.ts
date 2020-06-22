@@ -2,97 +2,130 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateBlog = /* GraphQL */ `
-  subscription OnCreateBlog {
-    onCreateBlog {
+export const onCreateConnect = /* GraphQL */ `
+  subscription OnCreateConnect {
+    onCreateConnect {
       id
       name
+      family_name
+      email
+      sex
+      birthday
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateBlog = /* GraphQL */ `
-  subscription OnUpdateBlog {
-    onUpdateBlog {
+export const onUpdateConnect = /* GraphQL */ `
+  subscription OnUpdateConnect {
+    onUpdateConnect {
       id
       name
+      family_name
+      email
+      sex
+      birthday
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteBlog = /* GraphQL */ `
-  subscription OnDeleteBlog {
-    onDeleteBlog {
+export const onDeleteConnect = /* GraphQL */ `
+  subscription OnDeleteConnect {
+    onDeleteConnect {
       id
       name
+      family_name
+      email
+      sex
+      birthday
       createdAt
       updatedAt
     }
   }
 `;
-export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost {
-    onCreatePost {
+export const onCreateAdmin = /* GraphQL */ `
+  subscription OnCreateAdmin {
+    onCreateAdmin {
       id
-      title
-      blogID
+      polices
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost {
-    onUpdatePost {
+export const onUpdateAdmin = /* GraphQL */ `
+  subscription OnUpdateAdmin {
+    onUpdateAdmin {
       id
-      title
-      blogID
+      polices
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost {
-    onDeletePost {
+export const onDeleteAdmin = /* GraphQL */ `
+  subscription OnDeleteAdmin {
+    onDeleteAdmin {
       id
-      title
-      blogID
+      polices
       createdAt
       updatedAt
     }
   }
 `;
-export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment {
-    onCreateComment {
+export const onCreateFsbAgent = /* GraphQL */ `
+  subscription OnCreateFsbAgent {
+    onCreateFsbAgent {
       id
-      postID
-      content
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment {
-    onUpdateComment {
+export const onUpdateFsbAgent = /* GraphQL */ `
+  subscription OnUpdateFsbAgent {
+    onUpdateFsbAgent {
       id
-      postID
-      content
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment {
-    onDeleteComment {
+export const onDeleteFsbAgent = /* GraphQL */ `
+  subscription OnDeleteFsbAgent {
+    onDeleteFsbAgent {
       id
-      postID
-      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser {
+    onCreateUser {
+      id
+      connectID
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser {
+    onUpdateUser {
+      id
+      connectID
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser {
+    onDeleteUser {
+      id
+      connectID
       createdAt
       updatedAt
     }
