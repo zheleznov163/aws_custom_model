@@ -1,1 +1,28 @@
+enum Sex {
+  male
+  famale
+}
 
+type Connect @model {
+  id: ID!
+  name: String!
+  family_name: String!
+  email: AWSEmail!
+  sex: Sex!
+  birthday: AWSDate!
+}
+
+type Admin @model {
+  id: ID!
+  polices: [String]
+}
+
+type FsbAgent @model {
+  id: ID!
+}
+
+type User @model {
+  id: ID!
+  connectID: ID!
+  connect: Connect! @connection(fields: ["connectID"])
+}
